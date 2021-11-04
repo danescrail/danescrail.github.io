@@ -1,3 +1,25 @@
+/* Загрузчик */
+
+.loader {
+    margin-left: 50%;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .container {
     width: 1920px;
     height: 1076px;
@@ -8,9 +30,11 @@ body {
 }
 
 header {
+    position: fixed;
     width: 100%;
     height: 60px;
     background: #344051;
+    z-index: 1;
 }
 
 .logo {
@@ -19,7 +43,21 @@ header {
     line-height: 60px;
     padding-left: 389px;
     float: left;
+    -webkit-animation: coming_logo 2s ease;
+    -o-animation: coming_logo 2s ease;
+    animation: coming_logo 2s ease;
 }
+
+@keyframes coming_logo{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.logo: {}
 
 .menu {
     float: left;
@@ -33,12 +71,59 @@ header {
     margin-right: 40px;
     font-size: 16px;
     text-transform: uppercase;
+    -webkit-animation: became_menu 2.5s;
+    -o-animation: became_menu 2.5s;
+    animation: became_menu 2.5s; 
+}
+
+.menu li a {
+    transition: all 0.1s;
+    color: white;
+    display: inline-block;
+}
+
+.menu li a:visited {
+    color: white;
+}
+
+.menu li a:hover {
+    color: #f4900b;
+}
+
+.menu li a:active {
+    transform: scale(1.1)
+}
+
+@keyframes became_menu{
+    0%{
+        opacity: 0;
+        margin-top: -80px;
+    }
+    
+    100%{
+        opacity: 1; 0px;
+    }
 }
 
 .main {
-    width: 100%;
+    width: 1920px;
     height: 100%;
     background: url(../img/boy.png) 90% 100%/auto 85% no-repeat, url(../img/background_main.jpg) center/cover no-repeat;
+    -webkit-animation: became_main 4s;
+    -o-animation-timing-function: became_main 4s;
+    animation-timing-function: became_main 4s;
+}
+
+@keyframes became_main {
+    0%{
+        opacity: 0;
+        margin-left: -1920px;
+    }
+    
+    100%{
+        opacity: 1; 0px;
+        margin-left: 0px;
+    }
 }
 
 .title__container {
@@ -72,7 +157,17 @@ header {
     margin-top: 58px;
     margin-left: 14px;
     margin-right: 14px;
+    transform: scale(1)
+}
 
+.title__container input:hover {
+    transition: all 0.2s;
+    background: #344051;
+    color: white;
+}
+
+.title__container input:active {
+    transform: scale(1.1)
 }
 
 .background_about_me {
@@ -89,6 +184,10 @@ header {
     text-transform: uppercase;
     font-weight: bolder;
     white-space: nowrap;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
+
 }
 
 .title_dash {
@@ -98,22 +197,55 @@ header {
     margin-top: 31px;
     margin-left: 925px;
     margin-right: 925px;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
+}
+
+@keyframes coming_round{
+    0%{
+        opacity: 0;
+        margin-top: 0px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 60px;
+    }
+}
+
+@keyframes coming_text1_block_about_me{
+    0%{
+        margin-left: 0px;
+        opacity: 0;
+    }
+    100%{
+        margin-left: 595px;
+        opacity: 1;
+    }
 }
 
 .round {
     border-radius: 200px;
     margin-top: 60px;
     margin-left: 860px;
+    -webkit-animation: coming_round 5s;
+    -o-animation: coming_round 5s;
+    animation: coming_round 5s;
 }
 
 .text1_block_about_me {
-    margin-top: 24px;
+    padding-top: 24px;
     margin-left: 595px;
+    margin-right: 600px;
     width: 732px;
     line-height: 14px;
     color: #3f495a;
     font-weight: 400;
+    -webkit-animation: coming_text1_block_about_me 2.5s;
+    -o-animation: coming_text1_block_about_me 2.5s;
+    animation: coming_text1_block_about_me 2.5s;
 }
+
 
 .text2_block_about_me {
     text-align: left;
@@ -123,6 +255,20 @@ header {
     line-height: 14px;
     color: #3f495a;
     font-weight: 400;
+    -webkit-animation: coming_text1_block_about_me 3s;
+    -o-animation: coming_text1_block_about_me 3s;
+    animation: coming_text1_block_about_me 3s;
+}
+
+@keyframes coming_about_me_input{
+    0%{
+        margin-left: 0px;
+        opacity: 0;
+    }
+    100%{
+        margin-left: 595px;
+        opacity: 1;
+    }
 }
 
 .background_about_me input {
@@ -132,7 +278,29 @@ header {
     border: 2px solid #6f707e;
     border-radius: 6px;
     color: #6f707e;
-    background: url(../img/background_about_me.jpg)
+    background: #fcfdfd;
+    transform: scale(1)
+}
+
+@keyframes background_about_me_input{
+    0%{
+        margin-top: 0px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+.background_about_me input:hover {
+    transition: all 0.2s;
+    background: #344051;
+    color: #fcfdfd;
+}
+
+.background_about_me input:active {
+    transform: scale(1.1)
 }
 
 .background_menu_skills {
@@ -150,6 +318,9 @@ header {
     text-transform: uppercase;
     font-weight: bolder;
     white-space: nowrap;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
 }
 
 .item_skills {
@@ -161,10 +332,21 @@ header {
     display: inline-block;
     text-align: center;
     list-style-type: none;
+    -webkit-animation: move_item_skills 2.5s ease;
+    -o-animation: move_item_skills 2.5s ease;
+    animation: move_item_skills 2.5s ease;
+    
 }
 
+@keyframes move_item_skills{
+    0%{
+        margin-left: -1000px;
+    }
+    100%{
+    }
+}
 .item_skills h3 {
-    color: #cf7600;
+    color: #f68542;
     margin-top: 36px;
     font-weight: 600;
 }
@@ -187,16 +369,36 @@ header {
     color: #384354;
     text-transform: uppercase;
     font-weight: bolder;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
+}
+
+@keyframes move_text_case{
+    0%{
+        opacity: 0;
+        margin-left: -1000px;
+    }
+    100%{
+        opacity: 1;
+        margin-left: 618px;
+    }
 }
 
 .text_case {
     margin: 38px 0px 42px 618px;
     color: #3f495a;
+    -webkit-animation: move_text_case 3s ease;
+    -o-animation: move_text_case 3s ease;
+    animation: move_text_case 3s ease;
 }
 
 .img_case {
     width: 1920px;
     margin-left: 388px;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
 }
 
 .client {
@@ -227,7 +429,13 @@ header {
     font-size: 12px;
     text-transform: lowercase;
     color: #525a69;
+    transform: all scale(1)
 }
+
+.client a:hover {
+    text-decoration: underline;
+}
+
 
 .client input {
     width: 201px;
@@ -239,7 +447,36 @@ header {
     color: #ffffff;
     font-size: 20px;
     text-transform: uppercase;
+    transform: all scale(1);
+    -webkit-animation: clien_input_coming 3s;
+    -o-animation: clien_input_coming 3s;
+    animation: clien_input_coming 3s;
 
+}
+
+@keyframes clien_input_coming{
+    0%{
+        opacity: 0;
+        margin-top: 80px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 13px;
+    }
+}
+
+.client input:hover {
+    transition: all 0.2s;
+    background: #ee8648;
+    border: 2px solid #ee8648;
+    color: #ffffff;
+}
+
+.client input:active {
+    background: #ee8648;
+    border: 2px solid #ee8648;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .block_project_name {
@@ -265,6 +502,7 @@ header {
     font-weight: bolder;
     font-size: 33px;
     color: #1c2534;
+    
 }
 
 .type_site {
@@ -272,6 +510,9 @@ header {
     margin: 56px 0px 0px 498px;
     text-transform: uppercase;
     color: #1c2534;
+    -webkit-animation: coming_logo 2s;
+    -o-animation: coming_logo 2s;
+    animation: coming_logo 2s;
 }
 
 .menu_choose {
@@ -281,6 +522,20 @@ header {
     background: #eeeeee;
     color: #7d7d7d;
     appearance: none;
+    -webkit-animation: coming_input_calc_cost 2s;
+    -o-animation: coming_input_calc_cost 2s;
+    animation: coming_input_calc_cost 2s;
+    
+}
+@keyframes coming_input_calc_cost{
+    0%{
+        opacity: 0;
+        margin-left: -800px;
+    }
+    100{
+        opacity: 100%;
+        margin-left: 0px;
+    }
 }
 
 .design {
@@ -288,6 +543,9 @@ header {
     margin: 46px 0px 0px 498px;
     text-transform: uppercase;
     color: #1c2534;
+    -webkit-animation: coming_logo 4s;
+    -o-animation: coming_logo 4s;
+    animation: coming_logo 4s;
 }
 
 .adaptive {
@@ -295,6 +553,9 @@ header {
     margin: 46px 0px 0px 498px;
     text-transform: uppercase;
     color: #1c2534;
+    -webkit-animation: coming_logo 4s;
+    -o-animation: coming_logo 4s;
+    animation: coming_logo 4s;
 }
 
 .line_cost_calculation {
@@ -313,11 +574,40 @@ header {
     font-weight: bold;
 }
 
+.block_cost p {
+    margin-top: 10px;
+}
+
 .result_cost {
     margin-top: 20px;
     font-size: 20px;
     color: #1c2534;
     font-weight: bold;
+}
+
+.result_cost p {
+    margin-top: 10px;
+}
+
+.background_some_stats_parallax {
+    margin-top: 150px;
+    background: url(../img/background_some_stats.png);
+    /* Путь к картинке */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
+
+.background_some_stats_parallax_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Прозрачность */
+    z-index: 2;
 }
 
 .background_some_stats {
@@ -326,12 +616,15 @@ header {
     height: 499px;
 }
 
-.background_some_stats h2 {
+.background_some_stats_parallax h2 {
     padding: 106px 0px 0px 806px;
     color: #323e4f;
     font-size: 28px;
     text-transform: uppercase;
     font-weight: bolder;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
 }
 
 .digits_stats {
@@ -343,7 +636,22 @@ header {
     width: 270px;
     margin-top: 88px;
     text-align: center;
+    -webkit-animation: move_items_li 2.5s ease;
+    -o-animation: move_items_li 2.5s ease;
+    animation: move_items_li 2.5s ease;
+    
 
+}
+
+@keyframes move_items_li{
+    0%{
+        margin-left: -1000px;
+        opacity: 0;
+    }
+    100%{
+        margin-left: 0px;
+        opacity: 1;
+    }
 }
 
 .digits_stats_numbers_smail {
@@ -375,7 +683,7 @@ header {
 }
 
 .digits_stats_text {
-    padding: 32px 0px 0px 0px;
+    padding: 32px 0px 100px 0px;
     color: #323e4f;
     font-size: 14px;
     white-space: nowrap;
@@ -391,16 +699,48 @@ header {
     text-transform: uppercase;
     font-weight: bolder;
     white-space: nowrap;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
+}
+
+@keyframes move_img_reviews{
+    0%{
+        opacity: 0;
+        padding-top: 0px;
+    }
+    100%{
+        opacity: 1;
+        padding-top: 56px;
+        
+    }
 }
 
 .img_reviews {
-    margin: 56px 0px 0px 911px;
+    padding: 56px 0px 0px 911px;
+    -webkit-animation: move_img_reviews 4s;
+    -o-animation: move_img_reviews 4s;
+    animation: move_img_reviews 4s;
+}
+
+@keyframes moving_text_review{
+    0%{
+        margin-left: -1000px;
+        opacity: 0;
+    }
+    100%{
+        margin-left: 618px;
+        opacity 1: 
+    }
 }
 
 .text_reviews {
     text-align: center;
     margin: 35px 0px 0px 618px;
     width: 695px;
+    -webkit-animation: moving_text_review 3s;
+    -o-animation: moving_text_review 3s;
+    animation: moving_text_review 3s;
 }
 
 .rounds_reviews {
@@ -425,11 +765,28 @@ header {
     text-transform: uppercase;
     font-weight: bolder;
     white-space: nowrap;
+    -webkit-animation: coming_logo 4s ease;
+    -o-animation: coming_logo 4s ease;
+    animation: coming_logo 4s ease;
+}
+
+@keyframes move_text_my_contact{
+    0%{
+        opacity: 0;
+        margin-left: -1000px;
+    }
+    100%{
+        opacity: 1;
+        margin-left: 671px;
+    }
 }
 
 .text_my_contact {
     color: #ffffff;
-    margin: 33px 0px 0px 671px
+    margin: 33px 0px 0px 671px;
+    -webkit-animation: move_text_my_contact 3s;
+    -o-animation: move_text_my_contact 3s;
+    animation: move_text_my_contact 3s ;
 }
 
 .item_my_contact {
@@ -443,14 +800,10 @@ header {
     width: 150px;
     height: 82px;
     margin-left: 100px;
-}
-
-.item_my_contact_geo {
-    padding-top: px;
-}
-
-item_my_contact_mail {
-    padding-top: px;
+    -webkit-animation: move_items_li 2.5;
+    -o-animation: move_items_li 2.5;
+    animation: move_items_li 2.5;
+    
 }
 
 .item_my_contact_telephone {
@@ -509,6 +862,22 @@ item_my_contact_mail {
     background: none;
     color: #ffffff;
     font-weight: bolder;
+}
+
+.button_option_message:hover {
+    background: #ffffff;
+    color: #424d5e;
+    border: 2px solid #424d5e;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: 0, 2s;
+}
+
+.button_option_message:active {
+    transform: scale(1.1);
+    background: #ffffff;
+    color: #424d5e;
+    transition: 0, 2s;
 }
 
 footer {
