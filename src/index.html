@@ -22,12 +22,12 @@
                 </div>
                 <div class="py-3 col-xxl-6 col-xl-7 offset-xxl-4 offset-xl-1 col-lg-7 offset-lg-1 d-none d-lg-block">
                     <ul>
-                        <li><a href="#">Обо мне</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Кейсы</a></li>
-                        <li><a href="#">Прайс</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#for_me">Обо мне</a></li>
+                        <li><a href="#my_skills">Услуги</a></li>
+                        <li><a href="#case">Кейсы</a></li>
+                        <li><a href="#cost">Прайс</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contact">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="col-5">
@@ -36,12 +36,12 @@
                             Навигация
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Обо мне</a>
-                            <a class="dropdown-item" href="#">Услуги</a>
-                            <a class="dropdown-item" href="#">Кейсы</a>
-                            <a class="dropdown-item" href="#">Прайс</a>
-                            <a class="dropdown-item" href="#">Отзывы</a>
-                            <a class="dropdown-item" href="#">Контакты</a>
+                            <a class="dropdown-item" href="#for_me">Обо мне</a>
+                            <a class="dropdown-item" href="#my_skills">Услуги</a>
+                            <a class="dropdown-item" href="#case">Кейсы</a>
+                            <a class="dropdown-item" href="#cost">Прайс</a>
+                            <a class="dropdown-item" href="#reviews">Отзывы</a>
+                            <a class="dropdown-item" href="#contact">Контакты</a>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="block_for_me">
+        <div class="block_for_me" id="for_me">
             <div class="container">
                 <div class="row h-100">
                     <h3 class="text-center">Обо мне</h3>
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="block_my_skill">
+        <div class="block_my_skill" id="my_skills">
             <div class="container">
                 <div class="row h-100 bl">
                     <h3 class="text-center">Что я умею</h3>
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="block_case">
+        <div class="block_case" id="case">
             <div class="container">
                 <div class="row">
                     <h3 class="text-center">Кейсы</h3>
@@ -148,32 +148,41 @@
                 </div>
                 <div class="block_cost">
                     <h4 class="text-center mb-5">Расчет стоимости</h4>
+                    <form class="form_cost" id="form_cost">
                     <div class="situation_form offset-1">
                         <h5>Тип сайта</h5>
                         <select name="type_site" id="type_site">
-                            <option value="" placeholder="Выберите пункт..."></option>
+                            <option value="1">Интернет-представительства организаций/лица</option>
+                            <option value="2">Информационные ресурсы</option>
+                            <option value="3">Веб-сервисы</option>
+                            <option value="4">Социальные сети</option>
                         </select>
                         <h5>Дизайн</h5>
                         <select name="design" id="design">
-                            <option value="" placeholder="Выберите пункт..."></option>
+                            <option value="1">Ваш дизайн</option>
+                            <option value="2">Дизайн готовых проектов</option>
+                            <option value="3">Создание для вас личного дизайна</option>
                         </select>
                         <h5>Адаптивность</h5>
                         <select name="adaptive" id="adaptive">
-                            <option value="" placeholder="Выберите пункт..."></option>
+                            <option value="1">Фиксированная</option>
+                            <option value="2">Резиновая (гибкая)</option>
+                            <option value="3">Адаптивная</option>
                         </select>
                         <div class="line_cost_calculation"></div>
                         <div class="first_line_cost d-flex justify-content-between">
                             <p class="mt-3">Сроки</p>
-                            <p class="mt-3 cost">0</p>
+                            <p class="mt-3" id="period"></p>
                         </div>
                         <div class="second_line_cost d-flex justify-content-between">
                             <p>Стоимость</p>
-                            <p class="justify-content-end cost">0</p>
+                            <p class="justify-content-end cost" id="cost"></p>
                         </div>
                     </div>
                     <div class="text-center mt-3">
-                        <input type="button" value="Оставить заявку" class="text-center">
+                        <input type="submit" value="Оставить заявку" class="text-center">
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -182,32 +191,32 @@
                 <div class="row">
                     <h3 class="text-center">Немного статистики</h3>
                     <div class="title_dash  mx-auto mb-5"></div>
-                    <div class="items_stats d-xxl-flex d-xl-flex d-lg-flex d-md-display d-sm-display  justify-content-between text-center mb-5">
+                    <div class="items_stats d-xxl-flex d-xl-flex d-lg-flex d-md-display d-sm-display  justify-content-between text-center mb-5" id="counter">
                         <li>
                             <img src="img/item_stats_smail.png" alt="" class="mt-5">
-                            <h4 class="item_smail">0</h4>
+                            <h4 class="item_smail number">0</h4>
                             <p>Счастливых Клиентов</p>
                         </li>
                         <li>
                             <img src="img/item_stats_char.png" alt="" class="mt-5">
-                            <h4 class="item_char">0</h4>
+                            <h4 class="item_char number">0</h4>
                             <p>Часов работы</p>
                         </li>
                         <li>
                             <img src="img/item_stats_verify.png" alt="" class="mt-5">
-                            <h4 class="item_verify">0</h4>
+                            <h4 class="item_verify number">0</h4>
                             <p>Проектов завершено</p>
                         </li>
                         <li>
                             <img src="img/item_stats_cup.png" alt="" class="mt-5">
-                            <h4 class="item_cup">0</h4>
+                            <h4 class="item_cup number">0</h4>
                             <p>Наград получено</p>
                         </li>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="block_reviews">
+        <div class="block_reviews" id="reviews">
             <div class="container">
                 <div class="row">
                     <h3 class="text-center">Отзывы</h3>
@@ -225,7 +234,7 @@
         </div>
         <div class="block_my_contact mt-5 text-center">
             <div class="container">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center" id="contact">
                     <h3 class="text-center">Мои контакты</h3>
                     <div class="title_dash mx-auto mb-4"></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi optio quisquam velit aspernatur voluptates molestiae, hic odit iusto.</p>
@@ -249,9 +258,9 @@
                     <h4>Оставьте мне сообщение</h4>
                     <form action="#">
                         <div class="option_message">
-                           <div class="d-xxl-flex d-xl-flex d-lg-flex d-md-block d-sm-block justify-content-center mt-5">
-                            <input type="text" name="name_contacts" placeholder="Имя" class="name_contacts">
-                            <input type="text" name="email_contacts" placeholder="Email" class="email_contacts">
+                            <div class="d-xxl-flex d-xl-flex d-lg-flex d-md-block d-sm-block justify-content-center mt-5">
+                                <input type="text" name="name_contacts" placeholder="Имя" class="name_contacts">
+                                <input type="text" name="email_contacts" placeholder="Email" class="email_contacts">
                             </div>
                             <textarea name="message_contacts" id="" placeholder="Сообщение" class="message_contacts"></textarea>
                             <br>
@@ -267,7 +276,9 @@
     <footer class="d-flex align-items-center justify-content-center">
         <p class="">Copyright © 2021 Андрей Браун. Design by Web</p>
     </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/myScript.js"></script>
 </body>
 
 </html>
