@@ -1,0 +1,98 @@
+body {
+  font-family: MyriadBold;
+}
+
+header {
+  width: 1280px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header p:first-child{
+  vertical-align: middle;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  margin-top: 0px;
+  background: #1b559e;
+  height: 80px;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+}
+
+header p:nth-child(2){
+  padding-left: 10px;
+}
+
+header p:nth-child(3){
+  padding: 10px 0px 0px 50px;
+  font-family: MyriadLight;
+}
+
+header p:nth-child(4){
+  padding: 10px 0px 0px 50px;
+}
+
+header button{
+  margin: 10px 0px 0px 20px;
+  height: 50px;
+  width: 180px;
+  background: #1b559e;
+  color: #ffffff;
+}
+
+.registration{
+  margin-top: 0px;
+  background: url(../img/main.jpg) no-repeat rgba(0, 0, 0, 0.6);
+  margin: auto;
+  width: 1280px;
+  height: 675px;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-blend-mode: multiply;
+   color: #fff; /* Цвет текста */
+}
+
+.registration h2 {
+  font-size: 38px;
+  padding: 0px 0px 0px 50px;
+  ;
+}
+
+.registration h5{
+  font-size: 16px;
+  font-family: MyriadLight;
+}
+
+.registration p:last-child{
+  font-family: MyriadLight;
+}
+
+.registration p{
+  margin-top: -20px;
+  color: #ffffff;
+}
+
+.registration button{
+  margin-top: 20px;
+}
+
+.main_form{
+  margin: 100px 0px 0px 50px;
+  padding: 50px;
+  width: 250px;
+  height: 300px;
+  background: black;
+  font-size: 20px;
+}
+
+.block_registration{
+  display: flex;
+  padding-top: 100px;
+  align-items: center;
+
+}
